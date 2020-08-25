@@ -950,6 +950,10 @@ static NSDictionary* customCertificatesForHost;
       @"navigationType": navigationTypes[@(navigationType)],
       @"isTopFrame": @(isTopFrame)
     }];
+    NSString *referer = [request valueForHTTPHeaderField:@"referer"];
+    if (referer) {
+      [event setObject:referer forKey:@"referer"];
+    }
     if (![self.delegate webView:self
       shouldStartLoadForRequest:event
                    withCallback:_onShouldStartLoadWithRequest]) {

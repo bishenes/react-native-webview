@@ -685,6 +685,7 @@ lockIdentifier
 mainDocumentURL (iOS only)
 navigationType
 isTopFrame
+referer
 ```
 
 ---
